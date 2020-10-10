@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="array_basic.cpp">
+    <ClCompile Include="initializer_list.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
