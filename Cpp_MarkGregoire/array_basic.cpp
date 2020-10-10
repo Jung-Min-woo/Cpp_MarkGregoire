@@ -17,4 +17,10 @@ int main(void) {
 	array<int, 3> arr = { 9, 8, 7 };
 	cout << "Array size = " << arr.size() << endl;
 	cout << "2nd Element = " << arr[1] << endl;
+
+	//<array> for 
+	array<int, 4> arr2 = { 3, 6, 8, 9 };
+	for (int i : arr2) {
+		cout << i << endl;
+	}
 }
