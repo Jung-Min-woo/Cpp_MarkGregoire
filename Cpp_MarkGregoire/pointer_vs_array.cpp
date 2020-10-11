@@ -1,7 +1,10 @@
 #include <iostream>
 #include <array>
 using namespace std;
-void doubleInts(int* theArray, size_t size) {
+void doubleInts(int theArray[2], size_t size) {
+//possible terms::
+//void doubleInts(int theArray[], size_t size) 
+//void doubleInts(int* theArray, size_t size)
 	for (size_t i = 0; i < size; i++)
 		theArray[i] *= 2;
 }
