@@ -19,7 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="uniform_initialization.cpp" />
+    <ClInclude Include="Database.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="EmployeeMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Database.cpp" />
+    <ClCompile Include="Employee.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
