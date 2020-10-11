@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <string>
 using namespace std;
 //c style string
 char* copyString(const char* str) {
@@ -30,4 +31,31 @@ int main(void) {
 	const char* text6 = R"-( "((Hello))" fdff)-";
 	std::cout << text3 << text4 << text5 << endl;
 	std::cout << text6 << endl;
+	//cpp style
+	//string A("12");
+	//string B("34");
+	//string C;
+	//C = A + B;
+	//cout << C << endl; //1234
+	string A("12");
+	string B("34");
+	B += A;
+	cout << B << endl; //3412
+	// compare
+	if (strcmp(text1, text2)) cout << "c style cmp" << endl;
+	if (A != B) cout << "cpp style cmp" << endl;
+	//std::string literal
+	auto string1 = "Hello World!"; //const char*
+	auto string2 = "Hello World!"s; //std::string
+
+	//High Level conversion
+	const string toParse = " 123USD";
+	size_t index = 0;
+	int value = stoi(toParse, &index);
+	cout << "Parsed value: " << value << endl;
+	cout << "First non-parsed character: " << toParse[index] << endl;
+	cout << "toParse is now: " << toParse << endl;
+	cout << "index is now: " << index << endl;
+
+
 }
