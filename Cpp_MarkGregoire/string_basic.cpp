@@ -1,7 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
+#include "string_basic.h"
 using namespace std;
+using namespace std::string_view_literals;
 //c style string
 char* copyString(const char* str) {
 	char* result = new char[strlen(str) + 1];
@@ -14,6 +16,9 @@ char* appendStrings(const char* str1, const char* str2, const char* str3) {
 	strcat(result, str2);
 	strcat(result, str3);
 	return result;
+}
+string_view extractExtension(string_view fileName) {
+	return fileName.substr(fileName.rfind('.'));
 }
 int main(void) {
 	//c style string
@@ -57,5 +62,21 @@ int main(void) {
 	cout << "toParse is now: " << toParse << endl;
 	cout << "index is now: " << index << endl;
 
+	//std::string_view class C++17
+	string str = "Hello";
+	string_view sv = " world";
+	// error : auto result = str + sv; 
+	auto result = str + sv.data();
+	cout << result << endl;
 
+	//ex string_view
+	string fileName = R"(c:\temp\myfile.txt)";
+	cout << "C++ string: " << extractExtension(fileName) << endl;
+	const char* cString = R"(c:\temp\myfile.txt)";
+	cout << "C string: " << extractExtension(cString) << endl;
+	cout << "Literal: " << extractExtension(R"(c:\temp\myfile.txt)") << endl;
+
+	//string view literal
+	auto sv1 = "My string_view"sv; //using namespace std::string_view_literals or using namespace std;
+	
 }
