@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="usual_memory_trouble_basic.cpp" />
+    <ClCompile Include="SpreadsheetCell.cpp" />
+    <ClCompile Include="SpreadsheetCell.h" />
+    <ClCompile Include="SpreadsheetCellMain.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
