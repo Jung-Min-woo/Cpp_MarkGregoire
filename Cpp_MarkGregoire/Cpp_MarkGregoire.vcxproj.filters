@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SpreadsheetCell.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SpreadsheetCell.h">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SpreadsheetCellMain.cpp">
+    <ClCompile Include="initializer_list_ctor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

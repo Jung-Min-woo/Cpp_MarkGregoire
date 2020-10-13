@@ -19,9 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SpreadsheetCell.cpp" />
-    <ClCompile Include="SpreadsheetCell.h" />
-    <ClCompile Include="SpreadsheetCellMain.cpp" />
+    <ClCompile Include="initializer_list_ctor.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
