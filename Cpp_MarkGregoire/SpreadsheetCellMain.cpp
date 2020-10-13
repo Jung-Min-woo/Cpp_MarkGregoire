@@ -6,13 +6,16 @@ int main(void) {
 	SpreadsheetCell myCell(5), anotherCell(4);
 	cout << "cell 1: " << myCell.getValue() << endl;
 	cout << "cell 2: " << anotherCell.getValue() << endl;
-
+	///default(HEAP)
+	///SpreadsheetCell myCell; // myCell() !ERROR!
 	//Heap Allocated
 	SpreadsheetCell* myCellp = new SpreadsheetCell(3.7);
 	cout << "cell 1: " << myCellp->getValue() <<
 		" " << myCellp->getString() << endl;
 	delete myCellp;
 	myCellp = nullptr;
+	///default(HEAP)
+	///SpreadsheetCell* myCellp = new SpreadsheetCell();
 
 	//Heap Allocated2
 	auto myCellp2 = make_unique<SpreadsheetCell>(3.7);
