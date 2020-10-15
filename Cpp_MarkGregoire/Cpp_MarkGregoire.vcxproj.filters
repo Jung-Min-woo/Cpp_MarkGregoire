@@ -15,7 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="initializer_list_ctor.cpp">
+    <ClInclude Include="Spreadsheet.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Spreadsheet.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
