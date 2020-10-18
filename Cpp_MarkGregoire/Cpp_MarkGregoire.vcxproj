@@ -22,6 +22,7 @@
     <ClInclude Include="Spreadsheet.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lvalue_reference.cpp" />
     <ClCompile Include="Spreadsheet.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
