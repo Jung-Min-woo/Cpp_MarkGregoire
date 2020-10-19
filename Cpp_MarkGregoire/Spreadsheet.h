@@ -12,6 +12,7 @@ public:
 	friend void swap(Spreadsheet& first, Spreadsheet& second) noexcept;
 	~Spreadsheet();
 	void setCellAt(size_t x, size_t y, const SpreadsheetCell& cell);
+	const SpreadsheetCell& getCellAt(size_t x, size_t y) const;
 	SpreadsheetCell& getCellAt(size_t x, size_t y);
 private:
 	void cleanup() noexcept;
