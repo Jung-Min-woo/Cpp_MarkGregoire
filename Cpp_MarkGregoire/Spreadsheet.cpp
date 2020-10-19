@@ -13,6 +13,18 @@ Spreadsheet::Spreadsheet(const Spreadsheet& src) : Spreadsheet(src.mWidth, src.m
 			mCells[i][j] = src.mCells[i][j];
 }
 
+Spreadsheet::Spreadsheet(Spreadsheet&& src) noexcept :Spreadsheet()
+{
+	swap(*this, src);
+}
+
+Spreadsheet& Spreadsheet::operator=(Spreadsheet&& rhs) noexcept
+{
+	Spreadsheet temp(std::move(rhs));
+	swap(*this, temp);
+	return *this;
+}
+
 Spreadsheet& Spreadsheet::operator=(const Spreadsheet& rhs)
 {
 	if (this == &rhs) return *this;
@@ -60,6 +72,24 @@ SpreadsheetCell& Spreadsheet::getCellAt(size_t x, size_t y)
 {
 	verifyCoordinate(x, y);
 	return mCells[x][y];
+}
+void Spreadsheet::cleanup() noexcept
+{
+	for (size_t i = 0; i < mWidth; i++)
+		delete[] mCells[i];
+	delete[] mCells;
+	mCells = nullptr;
+	mWidth = mHeight = 0;
+}
+void Spreadsheet::moveFrom(Spreadsheet& src) noexcept
+{
+	mWidth = src.mWidth;
+	mHeight = src.mHeight;
+	mCells = src.mCells;
+
+	src.mWidth = 0;
+	src.mHeight = 0;
+	src.mCells = nullptr;
 }
 void Spreadsheet::verifyCoordinate(size_t x, size_t y) const
 {
