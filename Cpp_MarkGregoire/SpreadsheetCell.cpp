@@ -16,14 +16,6 @@ double SpreadsheetCell::getValue(void) const
 	mNumAccesses++;
 	return mValue;
 }
-SpreadsheetCell& SpreadsheetCell::getCellAt(size_t x, size_t y)
-{
-	// TODO: 여기에 return 문을 삽입합니다.
-}
-const SpreadsheetCell& SpreadsheetCell::getCellAt(size_t x, size_t y) const
-{
-	
-}
 void SpreadsheetCell::set(std::string_view inString)
 {
 	mValue = stringToDouble(inString);
