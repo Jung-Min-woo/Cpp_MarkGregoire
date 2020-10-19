@@ -19,11 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Spreadsheet.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Spreadsheet.cpp" />
-    <ClCompile Include="SpreadsheetMain.cpp" />
+    <ClCompile Include="swap_movingsyntax.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
