@@ -1,6 +1,7 @@
 #include "Spreadsheet.h"
 #include <stdexcept>
-Spreadsheet::Spreadsheet(size_t width, size_t height) : mWidth(width), mHeight(height) {
+Spreadsheet::Spreadsheet(size_t width, size_t height)
+	 : mId(sCounter++),mWidth(width), mHeight(height) {
 	mCells = new SpreadsheetCell * [mWidth];
 	for (size_t i = 0; i < mWidth; i++)
 		mCells[i] = new SpreadsheetCell[mHeight];

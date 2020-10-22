@@ -4,6 +4,7 @@
 
 class Spreadsheet {
 public:
+	size_t getID() const;
 	Spreadsheet(size_t width, size_t height);
 	Spreadsheet(const Spreadsheet& src);
 	Spreadsheet(Spreadsheet&& src) noexcept; //moving syntax
@@ -15,6 +16,8 @@ public:
 	const SpreadsheetCell& getCellAt(size_t x, size_t y) const;
 	SpreadsheetCell& getCellAt(size_t x, size_t y);
 private:
+	static size_t sCounter = 0;
+	size_t mId = 0;
 	void cleanup() noexcept;
 	void moveFrom(Spreadsheet& src) noexcept;
 	void verifyCoordinate(size_t x, size_t y) const;
