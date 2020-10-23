@@ -19,7 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tt.cpp" />
+    <ClInclude Include="Spreadsheet.h" />
+    <ClInclude Include="SpreadsheetCell.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Spreadsheet.cpp" />
+    <ClCompile Include="SpreadsheetCell.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

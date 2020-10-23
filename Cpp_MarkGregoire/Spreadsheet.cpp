@@ -1,11 +1,14 @@
 #include "Spreadsheet.h"
 #include <stdexcept>
-Spreadsheet::Spreadsheet(size_t width, size_t height) : mWidth(width), mHeight(height) {
+#include <algorithm>
+Spreadsheet::Spreadsheet(size_t width, size_t height, SpreadsheetApplication& theApp)
+	: mId(sCounter++), mWidth(std::min(width, kMaxWidth)), mHeight(std::min(height, kMaxHeight))
+	, mTheApp(theApp)
+{
 	mCells = new SpreadsheetCell * [mWidth];
 	for (size_t i = 0; i < mWidth; i++)
 		mCells[i] = new SpreadsheetCell[mHeight];
 }
-
 Spreadsheet::Spreadsheet(const Spreadsheet& src) : Spreadsheet(src.mWidth, src.mHeight)
 {
 	for (size_t i = 0; i < mWidth; i++)
@@ -77,6 +80,10 @@ SpreadsheetCell& Spreadsheet::getCellAt(size_t x, size_t y)
 {
 	return const_cast<SpreadsheetCell&>(std::as_const(*this).getCellAt(x, y));
 }
+size_t Spreadsheet::getId() const
+{
+	return mId;
+}
 void Spreadsheet::cleanup() noexcept
 {
 	for (size_t i = 0; i < mWidth; i++)
@@ -107,4 +114,8 @@ void swap(Spreadsheet& first, Spreadsheet& second) noexcept
 	swap(first.mWidth, second.mWidth);
 	swap(first.mHeight, second.mHeight);
 	swap(first.mCells, second.mCells);
+}
+
+Spreadsheet::Cell::Cell(double initialValue) :mValue(initialValue)
+{
 }

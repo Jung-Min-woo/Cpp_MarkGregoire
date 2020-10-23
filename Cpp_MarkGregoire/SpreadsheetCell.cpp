@@ -27,6 +27,16 @@ std::string SpreadsheetCell::getString(void) const
 	return doubleToString(mValue);
 }
 
+void SpreadsheetCell::setColor(Color color)
+{
+	mColor = color;
+}
+
+SpreadsheetCell::Color SpreadsheetCell::getColor() const
+{
+	return mColor;
+}
+
 double SpreadsheetCell::stringToDouble(std::string_view inString) const
 {
 	return strtod(inString.data(), nullptr);
