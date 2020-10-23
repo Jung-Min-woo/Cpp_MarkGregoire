@@ -6,7 +6,7 @@ class SpreadsheetApplication; //Forward Declaration
 
 class Spreadsheet {
 public:
-	Spreadsheet(size_t width, size_t height);
+	Spreadsheet(size_t width, size_t height, SpreadsheetApplication& App);
 	Spreadsheet(const Spreadsheet& src);
 	Spreadsheet(Spreadsheet&& src) noexcept; //moving syntax
 	Spreadsheet& operator=(Spreadsheet && rhs) noexcept; //moving syntax
