@@ -1,5 +1,6 @@
 #pragma once
 #include <cstddef>
+#include <memory>
 #include "SpreadsheetCell.h"
 
 class SpreadsheetApplication; //Forward Declaration
@@ -29,14 +30,16 @@ public:
 	};
 
 private:
-	static size_t sCounter = 0;
+	class impl;
+	std::unique_ptr<impl> mImpl;
+	inline static size_t sCounter = 0;
 	size_t mId = 0;
 	void cleanup() noexcept;
 	void moveFrom(Spreadsheet& src) noexcept;
 	void verifyCoordinate(size_t x, size_t y) const;
 	bool inRange(size_t value, size_t upper) const;
 	Spreadsheet() = default;
-
+	
 	static size_t inline sCounter = 0; //need to get inline
 	size_t mId = 0;
 	SpreadsheetApplication& mTheApp;
