@@ -3,7 +3,7 @@ using namespace std;
 
 class Base {
 public:
-	virtual void someMethod() {
+	virtual void someMethod(double d) {
 		cout << "This is Base's version of someMethod()" << endl;
 	};
 protected:
@@ -14,9 +14,10 @@ private:
 class Derived final : public Base  {
 public :
 	virtual void someOtherMethod();
-	virtual void someMethod() override;
+	//ex1
+	virtual void someMethod(double d);
 };
-void Derived::someMethod() {
+void Derived::someMethod(double d) {
 	cout << "This is Derived's verion of someMethod()" << endl;
 }
 void Derived::someOtherMethod() {
@@ -25,13 +26,8 @@ void Derived::someOtherMethod() {
 	//COMPILE ERROR : cout << "The value of mPrivateInt : " << mPrivateInt << endl;
 }
 int main(void) {
-	Derived myDerived;
-	myDerived.someMethod();
-	myDerived.someOtherMethod();
-
-	Base myBase;
-	myBase.someMethod();
+	Derived myderived;
+	Base& ref = myderived;
+	ref.someMethod(1.1); // Called Derived version
 	
-	Base* base = new Derived();
-	//COMPILE ERROR : base->someOtherMethod(); 
 }
