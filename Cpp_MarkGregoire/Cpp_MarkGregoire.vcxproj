@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dtor_needs_virtual.cpp" />
+    <ClCompile Include="MyWeatherPrediction.cpp" />
+    <ClCompile Include="MyWeatherPrediction.h" />
+    <ClCompile Include="WeatherPrediction.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -15,7 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dtor_needs_virtual.cpp">
+    <ClCompile Include="WeatherPrediction.h">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyWeatherPrediction.h">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyWeatherPrediction.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
