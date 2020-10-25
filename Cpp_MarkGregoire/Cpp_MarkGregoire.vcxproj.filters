@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="derive_basic.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Binding_basic.cpp">
+    <ClCompile Include="dtor_needs_virtual.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
