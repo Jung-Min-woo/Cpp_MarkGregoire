@@ -25,8 +25,14 @@ int main(void) {
 	myBase2.go(); //non-sliced --> Go Derived
 
 	//DownCasting
-	Base* myBase3 = new Base();
+	cout << "DownCasting-------------" << endl;
+	Base* myBase3 = new Base;
 	Derived* myDerived2 = dynamic_cast<Derived*>(myBase3); //DO NOT USE staitc_cast
+	cout << "-------------" << endl;
 	if (myDerived2 != nullptr)
-		cout << "NULLPTR :: DOWNCASTING" << endl;
+		myDerived2->go();
+	else cout << "Something Wrong" << endl;
+	myBase3->go();
+	cout << "-------------" << endl;
+	delete myBase3;
 }
