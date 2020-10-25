@@ -6,6 +6,7 @@ public:
 	virtual void someMethod(double d) {
 		cout << "This is Base's version of someMethod()" << endl;
 	};
+	void go() { cout << "go() called on Base" << endl; }
 protected:
 	int mProtectedInt;
 private:
@@ -15,7 +16,8 @@ class Derived final : public Base  {
 public :
 	virtual void someOtherMethod();
 	//ex1
-	virtual void someMethod(double d) override// override keyword keeps COMPILE ERR override;
+	virtual void someMethod(double d) override;// override keyword keeps COMPILE ERR override;
+	void go() { cout << "go() called on Derived" << endl; }
 };
 void Derived::someMethod(double d) {
 	cout << "This is Derived's verion of someMethod()" << endl;
@@ -30,4 +32,7 @@ int main(void) {
 	Base& ref = myderived;
 	ref.someMethod(1.1); // Called Base version
 	ref.someMethod(1); //Called Derived version
+	//Hide 
+	myderived.go();
+	ref.go();
 }

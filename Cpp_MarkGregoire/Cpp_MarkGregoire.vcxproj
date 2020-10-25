@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Binding_basic.cpp" />
     <ClCompile Include="derive_basic.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
