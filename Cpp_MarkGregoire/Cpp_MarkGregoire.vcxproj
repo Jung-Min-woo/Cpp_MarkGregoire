@@ -19,9 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyWeatherPrediction.cpp" />
-    <ClCompile Include="MyWeatherPrediction.h" />
-    <ClCompile Include="WeatherPrediction.h" />
+    <ClCompile Include="ParentClass_ctor_basic.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

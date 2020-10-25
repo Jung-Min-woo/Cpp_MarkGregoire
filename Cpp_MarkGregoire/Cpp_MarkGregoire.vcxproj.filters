@@ -15,13 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WeatherPrediction.h">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MyWeatherPrediction.h">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MyWeatherPrediction.cpp">
+    <ClCompile Include="ParentClass_ctor_basic.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
