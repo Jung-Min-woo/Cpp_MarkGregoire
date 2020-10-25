@@ -3,6 +3,7 @@ using namespace std;
 class Base {
 public:
 	Base() {}
+	virtual void go() final{} // provide OVERRIDE
 	~Base() {}
 };
 class Derived : private Base {
