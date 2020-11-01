@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MultiHerit.cpp" />
-    <ClCompile Include="MultiHerit2.cpp" />
+    <ClCompile Include="ChangeReturnType.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
