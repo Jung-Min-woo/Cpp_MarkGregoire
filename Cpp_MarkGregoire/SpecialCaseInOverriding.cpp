@@ -1,6 +1,28 @@
 #include <iostream>
 using namespace std;
 
+class Gregarious {
+public:
+	virtual void talk() { cout << "Gregarious says hi!" << endl; }
+};
+class Shy : public Gregarious {
+protected:
+	virtual void talk() override {
+		cout << "Shy reluctantly says hello" << endl;
+	}
+};
+class Secret {
+protected:
+	virtual void dontTell() { cout << "I'll never tell" << endl; }
+};
+class Blabber : public Secret {
+public:
+	virtual void tell() { dontTell(); }
+	virtual void dontTell() override { cout << "I'll tell all" << endl; }
+
+	//change scope width
+	// using Secret::dontTell;
+};
 class MilesEstimator {
 public:
 	virtual ~MilesEstimator() = default;
