@@ -1,4 +1,5 @@
 #include <typeinfo>
+#include <string>
 #include <iostream>
 using namespace std;
 class Animal { 
@@ -14,4 +15,21 @@ void speak(const Animal& animal) {
 		cout << "Chirp" << endl;
 }
 
-int main() {}
+class Loggable{
+public:
+	virtual ~Loggable() = default;
+	virtual std::string getLogMessage() const = 0;
+};
+class Foo : public Loggable {
+public:
+	std::string getLogMessage() const override;
+};
+std::string Foo::getLogMessage() const { return "Hello Logger"; };
+void logObject(const Loggable& loggableobject) {
+	cout << typeid(loggableobject).name() << ": ";
+	cout << loggableobject.getLogMessage() << endl;
+}
+int main() {
+	Foo log;
+	logObject(log);
+}
