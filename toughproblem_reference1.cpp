@@ -1,5 +1,10 @@
 #include <iostream>
 using namespace std;
+void swap(int& first, int& second){
+    int temp = first;
+    first = second;
+    second = temp;
+}
 int main(void){
     //ex1 change main ref.
     int x = 3, z=5;
@@ -27,5 +32,9 @@ int main(void){
     //     private: int& mRef; // mRef is not initialized --> ERROR
     // }
 
-    
+    //ex4 Reference Parameter
+    int x3 = 5, y3 = 6;
+    swap(x3, y3);
+    //swap(5, 6) ::ERROR! pass by non-const reference 
+    cout<<"(x3,y3) = (" <<x3<<", "<<y3<<")"<<endl;
 }
