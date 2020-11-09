@@ -1,9 +1,17 @@
 #include <iostream>
+#include <string>
 using namespace std;
 void swap(int& first, int& second){
     int temp = first;
     first = second;
     second = temp;
+}
+//ex6 lvalue reference
+void handleMessage(std::string& message){
+    cout<<"handleMessage with lvalue reference: "<<message<<endl;
+}
+void handleMessage2(std::string&& message){
+    cout<<"handleMessage with rvalue reference: "<<message<<endl;
 }
 int main(void){
     //ex1 change main ref.
@@ -46,4 +54,13 @@ int main(void){
     swap(*xp,*yp);
     cout<<"After SWAP"<<endl;
     cout<<"(xp,yp) = (" <<*xp<<", "<<*yp<<")"<<endl;
+
+
+    //ex6 lvalue reference
+    //ERROR : handleMessage("Hello World"); // literal is not LVALUE
+    std::string a = "Hello ";
+    std::string b = "World";
+    //ERROR handleMessage(a+b); // temporary value is not LValue
+    handleMessage(a);
+    handleMessage2(a+b);
 }
