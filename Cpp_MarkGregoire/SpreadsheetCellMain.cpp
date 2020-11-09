@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "SpreadsheetCell.h"
 using namespace std;
 int main(void) {
@@ -11,7 +12,7 @@ int main(void) {
 	//Heap Allocated
 	SpreadsheetCell* myCellp = new SpreadsheetCell(3.7);
 	cout << "cell 1: " << myCellp->getValue() <<
-		" " << myCellp->getString() << endl;
+		" "  myCellp->getString() << endl;
 	delete myCellp;
 	myCellp = nullptr;
 	///default(HEAP)
