@@ -19,4 +19,13 @@ int main(void){
     int& xRef2 = x2;
     int* xPtr= &xRef2;
     *xPtr = 100;
+
+    //ex3 Reference Data Member
+    // class Myclass{
+    //     public:
+    //         MyClass(int& ref) : mRef(ref) {}
+    //     private: int& mRef; // mRef is not initialized --> ERROR
+    // }
+
+    
 }
