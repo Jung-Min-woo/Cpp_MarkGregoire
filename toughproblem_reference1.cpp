@@ -37,4 +37,13 @@ int main(void){
     swap(x3, y3);
     //swap(5, 6) ::ERROR! pass by non-const reference 
     cout<<"(x3,y3) = (" <<x3<<", "<<y3<<")"<<endl;
+
+    //ex5 pass Pointer as Reference
+    int x5 = 5, y5 = 6;
+    int* xp = &x5, *yp = &y5;
+    cout<<"BEFORE SWAP"<<endl;
+    cout<<"(xp,yp) = (" <<*xp<<", "<<*yp<<")"<<endl;
+    swap(*xp,*yp);
+    cout<<"After SWAP"<<endl;
+    cout<<"(xp,yp) = (" <<*xp<<", "<<*yp<<")"<<endl;
 }
