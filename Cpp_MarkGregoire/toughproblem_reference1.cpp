@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <utility>
 using namespace std;
 void swap(int& first, int& second){
     int temp = first;
@@ -48,6 +50,23 @@ void seperateOddsAndEvens(const int arr[], size_t size, int*& odds, size_t& numO
         if (arr[i] % 2 == 1) odds[oddsPos++] = arr[i];
         else evens[evenPos++] = arr[i];
     }
+}
+//In Cpp style2
+void seperateOddsAndEvens(const vector<int>& arr, vector<int>& odds, vector<int>& evens) {
+    cout << "seperateOddsAndEvens : Stylish Cpp Style1" << endl;
+    for (int i : arr) {
+        if (i % 2 == 1) odds.push_back(i);
+        else evens.push_back(i);
+    }
+}
+pair<vector<int>, vector<int>> seperateOddsAndEvens(const vector<int>& arr) {
+    cout << "seperateOddsAndEvens : Stylish Cpp Style2" << endl;
+    vector<int> odds, evens;
+    for (int i : arr) {
+        if (i % 2 == 1) odds.push_back(i);
+        else evens.push_back(i);
+    }
+    return std::make_pair(odds, evens);
 }
 int main(void){
     //ex1 change main ref.
@@ -112,5 +131,13 @@ int main(void){
     seperateOddsAndEvens(unSplit, std::size(unSplit), oddNums, numOdds, evenNums, numEvens);
     cout << "Nodd : " << numOdds << endl;
     cout << "NEven : " << numEvens << endl;
+    vector<int> vecUnSplit = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    vector<int> odds, evens;
+    seperateOddsAndEvens(vecUnSplit, odds, evens);
+    cout << "Nodd : " << odds.size() << endl;
+    cout << "NEven : " << evens.size() << endl;
+    auto [odds2, evens2] = seperateOddsAndEvens(vecUnSplit);
+    cout << "Nodd : " << odds2.size() << endl;
+    cout << "NEven : " << evens2.size() << endl;
     return 0;
 }
