@@ -21,6 +21,12 @@ bool intEqual(int item1, int item2){
 bool bothOdd(int item1, int item2){
     return item1 % 2 ==1 && item2 % 2 ==1;
 }
+//ex5 typedef vs typealias
+//using FunctionType = int(*)(char, double);
+//typedef int(*FunctionType)(char, double);
+//using IntPtr = int*
+//typedef int* intPtr
+
 int main(void){
     StringVector myVector;
     processVector(myVector);
@@ -32,5 +38,16 @@ int main(void){
     findMatches(arr1, arr2, arrSize, &intEqual);
     cout<<"Calling findMatches() using bothOdd(): "<<endl;
     findMatches(arr1,arr2,arrSize, &bothOdd);
+    //ex3 pointer typealias
+    //------------------------------------------------------------
+    //Employee employee;
+    //int(Employee::*methodPtr)() const = &Employee::getSalary;
+    //cout<<(employee.*methodPtr)()<<endl;
+    //------------------------------------------------------------
+    //Employee employee;
+    //using PtrToGet = int (Employee::*)() const
+    //PtrToGet methodPtr = &Employee::getSalary;
+    //cout<<(employee.*methodPtr()<<endl;
+    
     return 0;
 }
