@@ -15,6 +15,8 @@ class Derived:public Base{
     public:
         virtual ~Derived() = default;
 };
+class X{};
+class Y{};
 int main(void){
     //ex1 as_const #include<utility>
     std::string str = "C++";
@@ -32,5 +34,18 @@ int main(void){
     Derived derived;
     Base& br = derived;
     Derived& dr = static_cast<Derived&>(br);
+    return 0;
+    //ex4 reinterpret_cast()
+    X x;
+    Y y;
+    X* xp = &x;
+    Y* yp = &y;
+    xp = reinterpret_cast<X*>(yp);
+    //no need to cast when X* -> void*
+    void* p = xp;
+    //use reinterpret_cast void* -> X*
+    xp = reinterpret_cast<X*>(p)
+    X& xr = x;
+    Y& yr= reinterpret_cast<Y&>(x);
     return 0;
 }
