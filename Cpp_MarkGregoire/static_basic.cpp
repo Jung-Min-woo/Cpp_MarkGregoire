@@ -7,9 +7,13 @@ void performTask(){
         initialized = true;
     }
 }
+// Initialization orders of nonlocal variables
+// Demo::x -> y // there is no standard order
 class Demo{
     public: static int x;
-}
+};
+int Demo::x = 3;
+int y = 4; 
 int main(void){
     performTask();
     performTask();
