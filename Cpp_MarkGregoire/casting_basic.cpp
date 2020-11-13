@@ -6,6 +6,15 @@
 //void f(const char* str){
 //    ThirdPartyLibraryMethod(const_cast<char*>(str));
 //}
+//ex3 static_cast(downcasting)
+class Base{
+    public:
+        virtual ~Base() = default;
+};
+class Derived:public Base{
+    public:
+        virtual ~Derived() = default;
+};
 int main(void){
     //ex1 as_const #include<utility>
     std::string str = "C++";
@@ -14,4 +23,14 @@ int main(void){
     int i = 3;
     int j = 4;
     double result = static_cast<double>(i) /j;
+    //ex3 static_cast(downcasting)
+    Base* b;
+    Derived* d = new Derived();
+    b = d;
+    d = static_cast<Derived*>(b);
+    Base base;
+    Derived derived;
+    Base& br = derived;
+    Derived& dr = static_cast<Derived&>(br);
+    return 0;
 }
