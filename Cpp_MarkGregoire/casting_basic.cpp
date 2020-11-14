@@ -7,6 +7,7 @@
 //    ThirdPartyLibraryMethod(const_cast<char*>(str));
 //}
 //ex3 static_cast(downcasting)
+using namespace std;
 class Base{
     public:
         virtual ~Base() = default;
@@ -44,8 +45,21 @@ int main(void){
     //no need to cast when X* -> void*
     void* p = xp;
     //use reinterpret_cast void* -> X*
-    xp = reinterpret_cast<X*>(p)
+    xp = reinterpret_cast<X*>(p);
     X& xr = x;
     Y& yr= reinterpret_cast<Y&>(x);
+    //ex5
+    Base* b2;
+    Derived* d2;
+    b2 = d2;
+    d2 = dynamic_cast<Derived*>(b2);
+    Base b3;
+    Derived d3;
+    Base& b4 = b3;
+    try{
+        Derived& dr = dynamic_cast<Derived&>(b4);
+    }catch(const bad_cast&){
+        cout<<"Bad cast"<<endl;
+    }
     return 0;
 }
