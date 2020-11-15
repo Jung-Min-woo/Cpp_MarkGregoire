@@ -36,4 +36,7 @@ int main(void){
     myGrid.at(2,3) = 42;
     anotherGrid = myGrid;
     std::cout<<anotherGrid.at(2,3).value_or(0);
+    //ERROR 
+    // size_t height = 10;
+    // Grid<int, 10, height> testGrid;
 }
