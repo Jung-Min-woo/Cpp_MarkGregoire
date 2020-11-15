@@ -79,6 +79,21 @@ const unique_ptr<GamePiece>& GameBoard::at(size_t x, size_t y) const{
 unique_ptr<GamePiece>& GameBoard::at(size_t x, size_t y){
     return const_cast<unique_ptr<GamePiece>&>(as_const(*this).at(x,y));
 }
+//ex
+class TicTacToePiece : public GamePiece{
+    public:
+        virtual std::unique_pt<GamePiece> clone() const override;
+};
+std::unique_ptr<GamePiece> TicTacToePiece::clone()  const{
+    return std::make_unique<TicTacToePiece>(*this);
+}
 int main(void){
+    GameBoard chessBoard(8,8);
+    auto pawn = std::make_unique<ChessPiece>();
+    chessBoard.at(0,0) = std::move(pawn);
+    chessBoard.at(0,1) = std::make_unique<ChessPiece>();
+    chessBoard.at(0,1) = nullptr;
+    //!!!cause trouble!!!
+    //chessBoard.at(0,1) = make_unique<TicTacToePiece>();
     return 0;
 }
