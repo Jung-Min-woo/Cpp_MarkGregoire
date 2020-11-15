@@ -82,7 +82,7 @@ unique_ptr<GamePiece>& GameBoard::at(size_t x, size_t y){
 //ex
 class TicTacToePiece : public GamePiece{
     public:
-        virtual std::unique_pt<GamePiece> clone() const override;
+        virtual std::unique_ptr<GamePiece> clone() const override;
 };
 std::unique_ptr<GamePiece> TicTacToePiece::clone()  const{
     return std::make_unique<TicTacToePiece>(*this);
